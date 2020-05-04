@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import {operations} from '../store/weather'
+import {operations} from '../store/redux'
 //reactstrap
 import { Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const Search = () => {
-  const [city, setCity] = useState('')
+  const [city, setCity] = useState('');
   const dispatch = useDispatch()
 
   const handleSubmit =(e)=> {
     e.preventDefault()
 
-    dispatch(operations.fetchWeather(city))
+    dispatch(operations.fetchWeather(city), operations.fetchForecast(city))
     setCity('')
   }
 
@@ -29,6 +29,7 @@ const Search = () => {
             onChange={e => setCity(e.target.value)}
           />
           <Button className="btn btn-primary pl-5 pr-5 mb-2">Search</Button>
+
         </FormGroup>
       </Form>
     </Col>

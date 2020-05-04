@@ -1,23 +1,31 @@
 import React from 'react';
-//reactstrap
-import { Container } from 'reactstrap';
+import { useRoutes } from "hookrouter";
 //components
 import Nav from './Nav'
-import Search from './Search'
-import City from './City'
-import History from './History'
 import Footer from './Footer'
+import routes from "../router";
+//styled-components
+import styled from 'styled-components';
+
+const Content = styled.div`
+min-height: calc(100vh - 70px);
+`;
+
+const Bottom = styled.footer`
+height: 50px;
+`;
 
 const App = () => {
+  const routeResult = useRoutes(routes);
   return (
     <>
-      <Nav/>
-      <Container fluid className="full-height">
-        <Search/>
-        <City/>
-        <History/>
-      </Container>
-      <Footer/>
+      <Content>
+        <Nav/>
+        {routeResult}
+      </Content>
+      <Bottom>
+        <Footer />
+      </Bottom>
     </>
   )
 }

@@ -3,11 +3,11 @@ import types from './types';
 
 function weatherReducer(state = null, { type, payload }) {
   switch (type) {
-    case types.FETCH_SUCCESS:
+    case types.FETCH_SUCCESS_WEATHER:
       return payload;
 
-    case types.FETCH_REQUEST:
-    case types.FETCH_SUCCESS:
+    case types.FETCH_REQUEST_WEATHER:
+    case types.FETCH_SUCCESS_WEATHER:
       return null;
 
     default:
@@ -17,7 +17,7 @@ function weatherReducer(state = null, { type, payload }) {
 
 function historyReducer(state = [], { type, payload }) {
   switch (type) {
-    case types.FETCH_SUCCESS:
+    case types.FETCH_SUCCESS_WEATHER:
      const withoutAlreadyExist = state.filter(item=> item.id !== payload.id)
      const newState = [payload, ...withoutAlreadyExist]
      if(newState.length >=5) return newState.slice(0, 5);
@@ -28,9 +28,24 @@ function historyReducer(state = [], { type, payload }) {
   }
 }
 
+function forecastReducer(state = {}, { type, payload }) {
+  switch (type) {
+    case types.FETCH_SUCCESS_FORECAST:
+      return payload;
+
+    case types.FETCH_REQUEST_FORECAST:
+    case types.FETCH_SUCCESS_FORECAST:
+      return null;
+
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   weather: weatherReducer,
-  history: historyReducer
+  history: historyReducer,
+  forecast: forecastReducer
 });
 
 export default rootReducer

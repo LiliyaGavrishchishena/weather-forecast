@@ -9,7 +9,7 @@ import store from './store/index';
 import App from './components/App';
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './index.css';
 
 render(
   <BrowserRouter>

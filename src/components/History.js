@@ -1,4 +1,5 @@
 import React from 'react'
+import { A } from "hookrouter";
 import {useSelector} from 'react-redux'
 //reactstrap
 import { CardGroup, Card, CardTitle, Row, Col, Button } from 'reactstrap';
@@ -12,7 +13,7 @@ const History = () => {
       {history.map(item=>(
         <Card body className="text-center" key={item.name}>
           <CardTitle>{item.name}</CardTitle>
-          <Button>More</Button>
+          <Button><A href="/history">More</A></Button>
       </Card>
       ))}
       </CardGroup>
