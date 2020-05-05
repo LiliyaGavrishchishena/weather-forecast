@@ -1,18 +1,19 @@
 import React from 'react';
-import { useRoutes } from "hookrouter";
+import { useRoutes } from 'hookrouter';
 //components
-import Nav from './Nav'
-import Footer from './Footer'
-import routes from "../router";
+import Nav from './Nav';
+import Footer from './Footer';
+//routes
+import routes from '../router';
 //styled-components
 import styled from 'styled-components';
 
 const Content = styled.div`
-min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 `;
 
 const Bottom = styled.footer`
-height: 50px;
+  height: 50px;
 `;
 
 const App = () => {
@@ -20,14 +21,14 @@ const App = () => {
   return (
     <>
       <Content>
-        <Nav/>
+        <Nav />
         {routeResult}
       </Content>
       <Bottom>
         <Footer />
       </Bottom>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
 //core
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 //store
@@ -17,4 +17,5 @@ render(
       <Route component={App} />
     </Provider>
   </BrowserRouter>,
-  document.getElementById('app'))
+  document.getElementById('app'),
+);
