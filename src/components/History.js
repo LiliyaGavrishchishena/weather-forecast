@@ -14,9 +14,10 @@ const History = () => {
           {historyOfSearch.map(item => (
             <Card body className="text-center" key={item.name}>
               <CardTitle>{item.name}</CardTitle>
-              <Button>
-                <A href="/history">More</A>
-              </Button>
+
+              <A href="/history">
+                <Button>More</Button>
+              </A>
             </Card>
           ))}
         </CardGroup>

@@ -47,9 +47,9 @@ const City = () => {
             )}
           </CardText>
 
-          <Button color="danger">
-            <A href={`/detailed?city=${weather.name}`}>Details</A>
-          </Button>
+          <A href={`/detailed?city=${weather.name}`}>
+            <Button color="danger">Details</Button>
+          </A>
         </Card>
       </Col>
     </Row>
