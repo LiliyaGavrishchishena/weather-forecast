@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "serve": "webpack-dev-server --open",
     "build": "webpack --mode production"
   },

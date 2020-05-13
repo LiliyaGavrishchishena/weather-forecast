@@ -10,7 +10,11 @@ const Footer = () => {
       expand="md"
       className="justify-content-center mb-2"
     >
-      <NavbarBrand href="https://github.com/LiliyaGavrishchishena">
+      <NavbarBrand
+        href="https://github.com/LiliyaGavrishchishena"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Github
       </NavbarBrand>
     </Navbar>
