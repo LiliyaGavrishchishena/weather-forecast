@@ -28,7 +28,7 @@ const Search = () => {
               Weather in...
             </Label>
             <Input
-              className="form-control pl-5 pr-5 mr-4 mb-2"
+              className="form-control pr-5 mr-4 mb-2"
               value={city}
               onChange={e => setCity(e.target.value)}
             />
